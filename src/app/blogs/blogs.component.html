@@ -1,0 +1,10 @@
+<div class="container write-post d-flex justify-content-end">
+    <button type="button" class="btn btn-outline-dark" (click)="createBlogOnClick()">
+      Write a blog
+    </button>
+</div>
+
+<div class="blog-post">
+  <app-blog *ngFor="let blog of blogsService.blogs" [blog]="blog" (deleteBlogEvent)="deleteBlog(blog)" (click)="viewBlogOnClick(blog.id)"></app-blog>
+</div>
+

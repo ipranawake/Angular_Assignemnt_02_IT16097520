@@ -1,0 +1,36 @@
+<div class="blog-card">
+    <h5 class="blog-title">
+      {{ blog.title }}
+    </h5>
+    
+    <span> {{ blog.date | date }} </span>
+
+    <div class="blog-cover-image">
+      <img src="{{ blog.imageUrl }}" alt="blog-img" />
+    </div>
+
+    <p class="blog-desc">
+      {{ blog.description }} 
+    </p>
+
+    <div>
+      <table style="width:100%">
+        <tr>
+          <td>
+            <i class="fa fa-star" aria-hidden="true" id="1" [ngStyle]="setColor(1, blog)" (click)="setRating(1, blog); $event.stopPropagation()"></i>
+            <i class="fa fa-star" aria-hidden="true" id="2" [ngStyle]="setColor(2, blog)" (click)="setRating(2, blog); $event.stopPropagation()"></i>
+            <i class="fa fa-star" aria-hidden="true" id="3" [ngStyle]="setColor(3, blog)" (click)="setRating(3, blog); $event.stopPropagation()"></i>
+            <i class="fa fa-star" aria-hidden="true" id="4" [ngStyle]="setColor(4, blog)" (click)="setRating(4, blog); $event.stopPropagation()"></i>
+            <i class="fa fa-star" aria-hidden="true" id="5" [ngStyle]="setColor(5, blog)" (click)="setRating(5, blog); $event.stopPropagation()"></i>
+          </td>
+
+          <td style="text-align: right"> 
+            <button class="btn btn-default btn-sm" (click)="editBlog(blog.id)" style="margin-right: 10px;" > <i class="fa fa-cog"></i> Edit</button>
+            <div class="btn btn-danger" (click)="deleteBlog()"><i class="fa fa-trash-o fa-lg" ></i> Delete</div>
+          </td>
+        </tr>
+      </table>
+
+    </div>
+</div>
+
